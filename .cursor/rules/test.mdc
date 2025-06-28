@@ -1,0 +1,56 @@
+---
+description: 
+globs: *test*.py
+alwaysApply: false
+---
+# Rule: Project Testing Guidelines
+
+This document outlines the standards and best practices for writing tests in this project. The goal is to ensure code is reliable, maintainable, and robust.
+
+## 1. Testing Frameworks & Tools
+
+-   **Primary Framework**: `pytest` is the standard framework for all tests.
+-   **Test Coverage**: Use `pytest-cov` to measure and report code coverage.
+-   **Mocking**: Employ `pytest-mock` for creating mock objects and patching modules during tests.
+
+## 2. Test Organization
+
+-   **File Naming**: Test files must be named using the pattern `test_*.py` (e.g., `test_models.py`).
+-   **Function Naming**: Test functions should have descriptive names that indicate what they are testing, prefixed with `test_`.
+    -   **Format**: `test_<function_being_tested>_<scenario>`
+    -   **Example**: `test_user_creation_successful` or `test_get_item_not_found`
+-   **Directory Structure**: Organize tests in a `tests/` directory that mirrors the application's package structure.
+-   **Fixtures**: Use `pytest` fixtures (`@pytest.fixture`) for setup and teardown logic, such as database connections or creating model instances. This promotes reusability and modularity.
+
+## 3. Types of Tests
+
+-   **Unit Tests**: Focus on testing the smallest units of code in isolation (e.g., a single function or method). They should be fast and have no external dependencies (like databases or networks), which should be mocked.
+-   **Integration Tests**: Test the interaction between multiple components to ensure they work together as expected (e.g., testing an API endpoint that interacts with a database).
+-   **End-to-End (E2E) Tests**: Test the entire application flow from the user's perspective. These are typically slower and cover critical user paths.
+
+## 4. Coverage Requirements
+
+-   Strive for a high level of test coverage, but prioritize quality over quantity.
+-   **Target**: Aim for **at least 80% coverage** for core business logic.
+-   **Focus**: Ensure comprehensive testing of edge cases, boundary conditions, and error-handling paths.
+
+## 5. Best Practices & Principles
+
+-   **Independence**: Tests must be independent and runnable in any order. A test should not depend on the state or outcome of another test.
+-   **Clarity**: Use descriptive names and clear assertions (`assert`). Add comments only when the logic is complex and requires explanation.
+-   **AAA Pattern**: Structure tests using the Arrange-Act-Assert pattern:
+    1.  **Arrange**: Set up the necessary preconditions and inputs.
+    2.  **Act**: Execute the code being tested.
+    3.  **Assert**: Verify that the outcome is as expected.
+-   **Mock Dependencies**: Isolate the unit under test by mocking external services, databases, and APIs.
+-   **Fast Execution**: Tests should run quickly. Slow tests disrupt the development workflow.
+-   **No Hard-coded Values**: Avoid "magic strings" or numbers. Use constants or parameterized tests (`@pytest.mark.parametrize`) for testing with different inputs.
+
+## 6. Guidelines for AI
+
+-   When adding a new feature, you must also write corresponding unit or integration tests.
+-   When fixing a bug, first write a failing test that reproduces the bug, then write the code to make the test pass.
+-   Ensure all new code is covered by tests and that existing tests continue to pass before suggesting a commit.
+
+
+-   Refactor tests for clarity and efficiency where appropriate, but do not change the testing logic without a clear reason.

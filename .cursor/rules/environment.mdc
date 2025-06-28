@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Environment Configuration Guidelines
+
+## Configuration Management
+
+- **Environment Variables File**: Use a `.env` file to store environment-specific variables for local development. This file should **not** be committed to version control.
+- **Template File**: Provide an `.env.example` file in the repository. This file should act as a template, listing all necessary environment variables required by the application, but with placeholder or empty values.
+- **Loading Variables**: Use a library like `python-dotenv` to automatically load variables from the `.env` file into the environment when the application starts.
+
+## Naming and Usage Conventions
+
+- **Sensitive Data**: Never hard-code sensitive information (API keys, database credentials, secret keys) directly in the source code. Always load them from environment variables.
+- **Environment-Specific Files**: For different environments like staging or testing, you can use corresponding files (e.g., `.env.staging`) if your deployment strategy supports it.
+- **Naming Convention**: Environment variable names should be in `UPPERCASE` with words separated by underscores (e.g., `DATABASE_URL`, `API_SECRET_KEY`).
+
+## Development Environment Setup
+
+- **Automated Setup**: Provide scripts (e.g., a `Makefile` or shell script) to automate the setup of a new development environment.
+- **Containerization**: Use Docker and Docker Compose to create a consistent and reproducible development environment for all team members.
+- **Documentation**: Clearly document the steps required to set up the development environment in the project's `README.md` or a dedicated `CONTRIBUTING.md` file.
+
+## Production Environment Considerations
+
+- **Enhanced Security**: Production configurations must have heightened security measures. This includes using a secure, managed service for configuration and secrets (like AWS Secrets Manager, HashiCorp Vault, or GitHub Secrets).
+- **Access Control**: Limit access to production configuration and minimize the verbosity of logs to avoid exposing sensitive data.
+
+
+- **Monitoring and Alerting**: Implement robust monitoring and alerting on production systems to quickly detect and respond to issues related to configuration or application health.

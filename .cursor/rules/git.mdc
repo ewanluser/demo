@@ -1,0 +1,76 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Rule: Git Workflow and Conventions
+
+This rule defines the Git conventions for this project, including commit messages, branching, code reviews, and releases. Adhere to these guidelines to maintain a clean and understandable version history.
+
+## Commit Message Convention
+
+Follow the **Conventional Commits** specification for writing clear and descriptive commit messages.
+
+**Format:** `type(scope): description`
+
+-   **`type`**: Must be one of the following:
+    -   `feat`: A new feature.
+    -   `fix`: A bug fix.
+    -   `docs`: Documentation only changes.
+    -   `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+    -   `refactor`: A code change that neither fixes a bug nor adds a feature.
+    -   `perf`: A code change that improves performance.
+    -   `test`: Adding missing tests or correcting existing tests.
+    -   `build`: Changes that affect the build system or external dependencies.
+    -   `ci`: Changes to our CI configuration files and scripts.
+    -   `chore`: Other changes that don't modify `src` or `test` files.
+    -   `revert`: Reverts a previous commit.
+-   **`scope`** (optional): A noun describing the section of the codebase affected.
+-   **`description`**: A concise description of the change in the present tense.
+
+**Example:** `feat(api): add user authentication endpoint`
+
+## Branching Strategy
+
+This project uses a simplified **GitHub Flow** model.
+
+1.  **`main` branch**: This is the primary branch. It must always be stable and deployable. Direct pushes to `main` are forbidden.
+2.  **Feature Branches**: All new work (features, bug fixes, etc.) must be done on a separate branch.
+    -   Create branches from the latest `main`.
+    -   Use a descriptive naming convention: `feature/short-description` or `fix/issue-number`.
+    -   **Example:** `feature/user-login` or `fix/123-button-bug`
+
+## Pull Request (PR) & Code Review Process
+
+1.  **Create a PR**: Once your work is complete, open a Pull Request to merge your feature branch into `main`.
+2.  **PR Description**: The PR description should clearly explain the "what" and "why" of the changes. If it fixes an issue, link to it.
+3.  **Code Review**:
+    -   At least one other team member must review and approve the PR.
+    -   Reviewers should focus on:
+        -   Code quality, style, and correctness.
+        -   Functionality and requirements fulfillment.
+        -   Adequate test coverage.
+        -   Clear and sufficient documentation.
+4.  **Merge**: Once approved and all checks have passed, the PR can be merged into `main`. Use a "Squash and Merge" to keep the `main` branch history clean.
+
+## Versioning and Release Management
+
+-   **Semantic Versioning (SemVer)**: The project follows SemVer (`MAJOR.MINOR.PATCH`).
+    -   `MAJOR`: Incompatible API changes.
+    -   `MINOR`: Backward-compatible new functionality.
+    -   `PATCH`: Backward-compatible bug fixes.
+-   **Release Checklist**:
+    -   Ensure all tests are passing.
+    -   Update documentation (`README.md`, `CHANGELOG.md`, etc.).
+    -   Update the version number.
+-   **Git Tags**: Create a Git tag for each release.
+    -   **Format:** `vX.Y.Z` (e.g., `v1.2.1`)
+
+## Important Principles for AI
+
+-   **Do not commit code automatically** unless explicitly instructed to do so.
+-   Always ensure your proposed code changes adhere to the project's style and pass all existing tests before suggesting a commit.
+-   Keep commits small, atomic, and focused on a single logical change.
+
+
+-   When resolving merge conflicts, prioritize maintaining functional integrity and code quality. If a conflict is complex, ask for human intervention.

@@ -1,0 +1,38 @@
+---
+description: 
+globs: *.py
+alwaysApply: false
+---
+# Error Handling and Logging Guidelines
+
+## Exception Handling
+
+- **Specificity**: Catch specific exception types rather than using a generic `Exception`. This prevents unintended errors from being caught.
+- **Custom Exceptions**: Create custom exception classes to represent specific error conditions in your application domain. This makes error handling code more readable and robust.
+- **Handle at the Right Level**: Handle exceptions at the appropriate level of abstraction. Don't swallow exceptions at a low level if they should be handled by the caller.
+- **Meaningful Messages**: Provide clear and informative error messages that can help with debugging.
+
+## Logging Practices
+
+- **Standard Library**: Use Python's standard `logging` module for all application logging.
+- **Log Level Standards**: Adhere to the standard logging levels:
+    - `DEBUG`: Detailed information, typically of interest only when diagnosing problems.
+    - `INFO`: Confirmation that things are working as expected.
+    - `WARNING`: An indication that something unexpected happened, or indicative of some problem in the near future (e.g., 'disk space low'). The software is still working as expected.
+    - `ERROR`: Due to a more serious problem, the software has not been able to perform some function.
+    - `CRITICAL`: A serious error, indicating that the program itself may be unable to continue running.
+- **Contextual Information**: Include relevant context in log messages, such as `request ID`, `user ID`, or other transaction identifiers to make debugging easier.
+- **Avoid Sensitive Data**: Never log sensitive information (e.g., passwords, API keys, personal data) in plain text.
+
+## Logging Configuration
+
+- **Log Format**: Configure a consistent log format that includes a timestamp, log level, module name, and the message.
+- **Environment-Specific Levels**: Adjust the log verbosity based on the environment. Use `DEBUG` or `INFO` for development and `WARNING` or `ERROR` for production.
+- **Structured Logging**: Consider using a structured logging format like JSON, especially for applications that will be monitored by log analysis tools (e.g., Elasticsearch, Splunk).
+
+## Monitoring and Alerting
+
+- **Alerting on Critical Errors**: Set up automated alerts for `CRITICAL` and `ERROR` level logs to ensure prompt attention to serious issues.
+- **Health Checks**: Implement health check endpoints and performance monitoring to track the application's status.
+- **Monitoring Tools**: Use appropriate monitoring tools to track application performance, error rates, and other key metrics.
+- **Alert Thresholds**: Set reasonable and actionable alert thresholds to avoid "alert fatigue" for the development team.

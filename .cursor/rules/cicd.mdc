@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# CI/CD Guidelines
+
+## GitHub Actions Configuration
+
+- **Workflow Separation**: Create separate workflow files for each major workflow (e.g., `linting.yml`, `testing.yml`, `build.yml`, `deploy.yml`).
+- **Core Workflows**: Essential workflows should include:
+    - Code Quality Checks (Linting, static analysis)
+    - Test Execution (Unit, Integration, E2E)
+    - Build Process
+    - Release Process
+- **Caching**: Utilize GitHub Actions caching to speed up builds and tests by caching dependencies and build outputs.
+
+## Continuous Integration (CI)
+
+- **Trigger on Commit**: Automatically trigger code quality checks and tests on every commit to any branch.
+- **Pull Request Gating**: All pull requests must pass all CI checks before they can be merged into the `main` or `develop` branches.
+- **Scheduled Full Tests**: Schedule regular runs of the complete test suite, including long-running tests, to catch issues that might be missed in per-commit runs.
+
+## Continuous Deployment (CD)
+
+- **Automated Staging Deployment**: Automatically deploy to development and/or staging environments after a successful merge to the `develop` branch.
+- **Manual Production Deployment**: Production deployments must be triggered manually, requiring approval from a project maintainer.
+- **Pre-deployment Smoke Tests**: Automatically run smoke tests before deploying to any environment to ensure basic functionality is working.
+- **Rollback Strategy**: Implement a robust and fast rollback mechanism to quickly revert a failed deployment.
+
+## Environment Management
+
+- **Environment Segregation**: Clearly define and isolate `development`, `staging`, and `production` environments.
+- **Configuration Management**: Use environment variables to manage configuration differences between environments.
+- **Secrets Management**: Store all sensitive information, such as API keys and credentials, in GitHub Secrets.
+
+
+- **Environment Consistency**: Ensure that staging and production environments are as identical as possible to prevent "it works on my machine" issues.

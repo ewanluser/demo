@@ -1,0 +1,38 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Management Guidelines
+
+## Task Management
+
+- **Issue Tracking**: Use GitHub Issues to track all tasks, features, and bugs.
+- **Kanban Board**: Utilize GitHub Projects (or a similar Kanban board) to visualize and manage the workflow (e.g., To Do, In Progress, Done).
+- **Task Definition**: Each issue should have:
+    - A clear and concise description.
+    - Well-defined acceptance criteria.
+    - An assigned priority level.
+
+## Issue Categorization
+
+- **Labels**: Use labels to categorize issues effectively. Standard labels should include:
+    - `bug`: For defects and errors in the code.
+    - `enhancement`: For new features or improvements to existing functionality.
+    - `documentation`: For tasks related to writing or updating documentation.
+    - `question`: For items that require discussion or clarification.
+    - `priority: high`, `priority: medium`, `priority: low`: To indicate urgency.
+
+## Milestone Management
+
+- **Release Planning**: Use GitHub Milestones to plan for version releases and group related issues.
+- **Milestone Goals**: Each milestone should have a clear set of objectives and a due date.
+- **Progress Review**: Regularly review milestone progress to ensure timely releases and identify potential roadblocks.
+
+## Communication and Collaboration
+
+- **Transparent Communication**: Maintain open and transparent communication within GitHub Issues and Pull Requests.
+- **Decision Logging**: Document all significant decisions and their rationale in the relevant issue or a designated documentation file.
+
+
+- **Mentions**: Use `@mentions` to notify and involve relevant team members in discussions.

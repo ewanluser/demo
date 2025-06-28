@@ -1,0 +1,67 @@
+---
+description: 
+globs: *.md
+alwaysApply: false
+---
+# Documentation Standards
+
+## README.md Guidelines
+
+- Maintain a clear document structure using appropriate Markdown syntax.
+- **Important**: In every modification, preserve the "Cursor Historical Download Links" second-level heading in `README.md`. Do not delete it.
+- Ensure `README.md` includes the following sections:
+  - Project Introduction
+  - Installation Instructions
+  - Usage Guide
+  - Contribution Guidelines (if applicable)
+  - Author: Xuanqing https://huanwang.org
+  - License Information
+  - Cursor Historical Download Links (must be preserved)
+
+## CHANGELOG.md Guidelines
+
+When requested to update `CHANGELOG.md`, please follow this format:
+
+```markdown
+## v1.0.0
+- New Feature: Reset device ID.
+- Bug Fix: Fixed device ID reset failure.
+```
+
+## Documentation Update Principles
+
+- Keep documentation synchronized with code changes.
+- Use clear and concise language.
+- Provide sufficient examples and explanations.
+- Ensure consistent formatting across all documents.
+
+## API Documentation Standards
+
+- Document API endpoints using the OpenAPI/Swagger specification.
+- Each API endpoint's documentation should include:
+  - A description of its functionality.
+  - Request parameters and formats.
+  - Response formats and status codes.
+  - Error handling procedures.
+  - Usage examples.
+- Consider using automated documentation generation tools like Sphinx or MkDocs.
+
+## Internationalization (i18n) Support
+
+- The primary documentation will be provided in English.
+- Store different language versions in separate files or directories.
+- Keep documentation for all languages synchronized.
+
+## Documentation Testing
+
+- Ensure all code examples in the documentation are runnable and up-to-date.
+- Periodically validate commands and procedures described in the documentation.
+- Use `doctest` or dedicated tests to verify the correctness of code examples.
+
+## Versioning and Documentation
+
+- Documentation should clearly state the applicable software version.
+- Update documentation in sync with major version releases.
+
+
+- Consider using documentation versioning that corresponds with the code version.

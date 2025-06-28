@@ -1,0 +1,182 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# General Project Standards and Guidelines
+
+## Technology Stack
+
+### Core Requirements
+- **Python**: Use Python 3.11+ syntax features and best practices
+- **Dependency Management**: Poetry for dependency management and virtual environments
+- **CI/CD**: GitHub Actions for automated builds, testing, and deployment
+- **Version Control**: GitHub as the primary code hosting platform
+- **Scripting**: Bash scripts for automation tasks
+- **Documentation**: Markdown for all documentation
+
+### Framework and Library Standards
+- Prefer well-maintained, widely-adopted libraries
+- Evaluate license compatibility before adoption
+- Document all external dependencies and their purposes
+- Use semantic versioning for releases
+
+## Code Style and Quality
+
+### General Principles
+- **Clarity over Cleverness**: Write self-documenting, readable code
+- **Meaningful Naming**: Use descriptive variable, function, and class names
+- **Comprehensive Comments**: Explain complex logic, algorithms, and business rules
+- **Language Standards**: Follow official style guides (PEP 8 for Python, etc.)
+- **Consistency**: Maintain consistent coding patterns across the project
+
+### Code Organization
+- **Single Responsibility**: Each function/class should have one clear purpose
+- **Separation of Concerns**: Separate business logic, data access, and presentation
+- **Error Handling**: Implement proper exception handling and logging
+- **Type Hints**: Use type annotations for better code documentation and IDE support
+
+## Project Structure and Architecture
+
+### Directory Organization
+- **Clear Hierarchy**: Maintain logical project structure reflecting functionality
+- **Modular Design**: Group related functionality in dedicated modules/packages
+- **Descriptive Names**: Use directory names that clearly indicate their contents
+- **Configuration Management**: Centralize configuration in dedicated config files
+
+### Architecture Principles
+- **Layered Architecture**: Separate presentation, business logic, and data layers
+- **Dependency Injection**: Use dependency injection for better testability
+- **Interface Segregation**: Define clear interfaces between components
+- **Documentation**: Maintain up-to-date architecture documentation
+
+## Development Best Practices
+
+### Testing Strategy
+- **Test-Driven Development**: Write tests before implementation when possible
+- **Coverage Goals**: Aim for >80% test coverage on critical paths
+- **Test Types**: Implement unit, integration, and end-to-end tests
+- **Continuous Testing**: Run tests automatically on every commit
+
+### Code Reusability
+- **DRY Principle**: Don't Repeat Yourself - extract common functionality
+- **Utility Libraries**: Build reusable utility functions and classes
+- **Component Design**: Create modular, reusable components
+- **Documentation**: Document APIs and usage patterns
+
+### Maintainability
+- **Refactoring**: Regularly refactor code to improve structure
+- **Technical Debt**: Track and address technical debt systematically
+- **Code Reviews**: Mandatory peer reviews for all changes
+- **Documentation**: Keep code documentation current with changes
+
+## Dependency Management
+
+### Version Control
+- **Lock Files**: Use lock files to ensure reproducible builds
+- **Version Pinning**: Pin major versions, allow minor/patch updates
+- **Regular Updates**: Schedule regular dependency updates
+- **Security Scanning**: Monitor dependencies for security vulnerabilities
+
+### Dependency Evaluation
+- **Necessity Assessment**: Evaluate if new dependencies are truly needed
+- **Maintenance Status**: Check project activity and maintenance status
+- **Community Support**: Consider community size and support quality
+- **License Compatibility**: Ensure license compatibility with project requirements
+
+### Environment Management
+- **Separation**: Clearly separate development, testing, and production dependencies
+- **Virtual Environments**: Use isolated environments for development
+- **Documentation**: Document dependency purposes and requirements
+- **Minimal Production**: Keep production dependencies minimal
+
+## Security Best Practices
+
+### Sensitive Information
+- **No Hardcoding**: Never hardcode secrets, passwords, or API keys
+- **Environment Variables**: Use environment variables for configuration
+- **Secret Management**: Use dedicated secret management tools for production
+- **Key Rotation**: Implement regular key rotation policies
+
+### Authentication and Authorization
+- **Strong Authentication**: Implement robust authentication mechanisms
+- **Principle of Least Privilege**: Grant minimal necessary permissions
+- **Session Management**: Secure session handling and timeout policies
+- **Input Validation**: Validate and sanitize all user inputs
+
+### Security Monitoring
+- **Vulnerability Scanning**: Regular security scans of dependencies
+- **Code Analysis**: Static code analysis for security issues
+- **Logging**: Comprehensive security event logging
+- **Incident Response**: Clear procedures for security incidents
+
+## Performance and Optimization
+
+### Code Efficiency
+- **Algorithm Optimization**: Choose efficient algorithms and data structures
+- **Resource Management**: Proper memory and CPU usage optimization
+- **Database Optimization**: Efficient queries and database design
+- **Caching Strategies**: Implement appropriate caching at multiple levels
+
+### Monitoring and Profiling
+- **Performance Metrics**: Track key performance indicators
+- **Profiling**: Regular performance profiling and bottleneck identification
+- **Load Testing**: Test system behavior under expected load
+- **Optimization**: Data-driven optimization based on real metrics
+
+### Scalability Considerations
+- **Horizontal Scaling**: Design for horizontal scaling when possible
+- **Stateless Design**: Prefer stateless components for better scalability
+- **Async Operations**: Use asynchronous programming for I/O operations
+- **Resource Limits**: Set appropriate resource limits and timeouts
+
+## Documentation Standards
+
+### Code Documentation
+- **API Documentation**: Comprehensive API documentation with examples
+- **Inline Comments**: Explain complex logic and business rules
+- **README Files**: Clear installation, usage, and development instructions
+- **Architecture Documentation**: High-level system design documentation
+
+### Process Documentation
+- **Development Workflow**: Document development and deployment processes
+- **Troubleshooting Guides**: Common issues and their solutions
+- **Contributing Guidelines**: Clear guidelines for contributors
+- **Change Log**: Maintain detailed change logs for releases
+
+### Documentation Maintenance
+- **Synchronized Updates**: Always update related documentation when making code changes
+- **README Updates**: Update README.md for new features, configuration changes, or API modifications
+- **Version Documentation**: Update version-specific documentation for breaking changes
+- **Examples and Tutorials**: Refresh code examples and tutorials when APIs change
+- **Configuration Docs**: Update configuration documentation when adding new settings
+- **Deployment Guides**: Refresh deployment documentation for infrastructure changes
+- **Documentation Review**: Include documentation updates in code review process
+
+## Quality Assurance
+
+### Code Review Process
+- **Mandatory Reviews**: All code changes require peer review
+- **Review Checklist**: Use standardized review criteria
+- **Automated Checks**: Automated linting, testing, and security checks
+- **Knowledge Sharing**: Use reviews for knowledge transfer
+
+### Continuous Integration
+- **Automated Testing**: All tests run automatically on commits
+- **Build Validation**: Automated build verification
+- **Quality Gates**: Quality thresholds that must be met
+- **Deployment Pipeline**: Automated deployment to staging/production
+
+## Project Lifecycle
+
+### Planning and Design
+- **Requirements Documentation**: Clear, testable requirements
+- **Design Reviews**: Peer review of design decisions
+- **Prototyping**: Build prototypes for complex features
+- **Risk Assessment**: Identify and mitigate project risks
+
+### Maintenance and Updates
+- **Regular Maintenance**: Scheduled maintenance windows
+- **Update Procedures**: Clear procedures for updates and patches
+- **Rollback Plans**: Tested rollback procedures for deployments
+- **End-of-Life Planning**: Clear deprecation and migration strategies
