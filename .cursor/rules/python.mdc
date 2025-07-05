@@ -1,6 +1,6 @@
 ---
 description: 
-globs: 
+globs: **/*.py
 alwaysApply: false
 ---
 # Role: Senior Python Engineer
